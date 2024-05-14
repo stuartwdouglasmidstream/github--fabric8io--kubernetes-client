@@ -154,7 +154,7 @@
     <maven.surefire.plugin.version>3.2.5</maven.surefire.plugin.version>
     <jsr305.version>3.0.2</jsr305.version>
     <maven.source.plugin.version>3.3.0</maven.source.plugin.version>
-    <sundrio.version>0.103.1</sundrio.version>
+    <sundrio.version>0.200.0</sundrio.version>
     <asm.bundle.version>8.0.1</asm.bundle.version>
     <jetty.version>11.0.20</jetty.version>
     <guava.version>33.1.0-jre</guava.version>

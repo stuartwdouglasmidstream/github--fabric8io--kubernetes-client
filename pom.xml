@@ -1,41 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!--
-
-    Copyright (C) 2015 Red Hat, Inc.
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-            http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-
--->
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
-
   <groupId>io.fabric8</groupId>
   <artifactId>kubernetes-client-project</artifactId>
   <version>6.11.0</version>
   <packaging>pom</packaging>
-
   <name>Fabric8 :: Kubernetes :: Project</name>
   <description>Java client for Kubernetes and OpenShift</description>
   <url>https://github.com/fabric8io/kubernetes-client</url>
   <inceptionYear>2015</inceptionYear>
-
   <organization>
     <name>Red Hat</name>
     <url>https://redhat.com</url>
   </organization>
-
   <licenses>
     <license>
       <name>Apache License, Version 2.0</name>
@@ -43,9 +21,6 @@
       <distribution>repo</distribution>
     </license>
   </licenses>
-
-  <!-- including A developer as it's required by the maven poms going into
-    central -->
   <developers>
     <developer>
       <id>geeks</id>
@@ -54,158 +29,6 @@
       <organizationUrl>https://github.com/fabric8io/kubernetes-client</organizationUrl>
     </developer>
   </developers>
-
-  <scm>
-    <connection>scm:git:git@github.com:fabric8io/kubernetes-client.git</connection>
-    <developerConnection>scm:git:git@github.com:fabric8io/kubernetes-client.git</developerConnection>
-    <url>https://github.com/fabric8io/kubernetes-client/</url>
-    <tag>${project.version}</tag>
-  </scm>
-
-  <distributionManagement>
-    <snapshotRepository>
-      <id>ossrh</id>
-      <name>Sonatype OSS Repository (Snapshots)</name>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-    </snapshotRepository>
-    <repository>
-      <id>ossrh</id>
-      <name>Sonatype OSS Repository</name>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-    </repository>
-  </distributionManagement>
-
-  <repositories>
-    <repository>
-      <id>sonatype-maven-org</id>
-      <name>Sonatype Maven Repository (maven.org)</name>
-      <url>https://repo1.maven.org/maven2/</url>
-      <releases><enabled>true</enabled></releases>
-      <snapshots><enabled>false</enabled></snapshots>
-    </repository>
-  </repositories>
-
-  <properties>
-    <useIncrementalCompilation>false</useIncrementalCompilation>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-    <!-- Core versions -->
-    <sundrio.version>0.103.1</sundrio.version>
-    <okhttp.version>3.12.12</okhttp.version>
-    <okhttp.bundle.version>3.12.1_1</okhttp.bundle.version>
-    <okio.version>1.17.6</okio.version>
-    <okio.bundle.version>1.15.0_1</okio.bundle.version>
-    <jackson.version>2.17.0</jackson.version>
-    <jetty.version>11.0.20</jetty.version>
-    <maven-core.version>3.9.6</maven-core.version>
-    <maven-plugin-annotations.version>3.11.0</maven-plugin-annotations.version>
-    <vertx.version>4.5.6</vertx.version>
-    <zjsonpatch.version>0.3.0</zjsonpatch.version>
-
-    <!-- API versions -->
-    <jsr305.version>3.0.2</jsr305.version>
-    <gradle-api.version>8.5</gradle-api.version>
-    <groovy-api.version>4.0.20</groovy-api.version>
-
-    <!-- Testing versions -->
-    <junit.version>5.10.2</junit.version>
-    <assertj.core.version>3.25.3</assertj.core.version>
-    <awaitility.version>4.2.1</awaitility.version>
-    <approvaltests.version>23.0.0</approvaltests.version>
-    <mockito.version>4.11.0</mockito.version>
-    <spock.version>2.3-groovy-4.0</spock.version>
-
-    <conscrypt-openjdk-uber.bundle.version>1.4.2_1</conscrypt-openjdk-uber.bundle.version>
-    <generex.version>1.0.2</generex.version>
-    <generex.bundle.version>1.0.1_1</generex.bundle.version>
-    <automaton.bundle.version>1.11-8_1</automaton.bundle.version>
-    <aries-spifly.bundle.version>1.3.0</aries-spifly.bundle.version>
-    <asm.bundle.version>8.0.1</asm.bundle.version>
-    <jackson.bundle.version>${jackson.version}</jackson.bundle.version>
-    <slf4j.version>2.0.12</slf4j.version>
-    <log4j.version>2.23.1</log4j.version>
-    <lombok.version>1.18.32</lombok.version>
-    <snakeyaml.version>2.7</snakeyaml.version>
-    <snakeyaml.bundle.version>2.2</snakeyaml.bundle.version> <!-- Transitive Jackson -->
-    <bouncycastle.version>1.77</bouncycastle.version>
-    <bc-fips.version>1.0.2.4</bc-fips.version>
-    <bcpkix-fips.version>1.0.7</bcpkix-fips.version>
-    <commons-compress.version>1.26.1</commons-compress.version>
-    <commons-io.version>2.15.1</commons-io.version> <!-- Required by Gradle Testing Toolkit -->
-    <guava.version>33.1.0-jre</guava.version> <!-- Required by Gradle Testing Toolkit -->
-    <scr.annotations.version>1.12.0</scr.annotations.version>
-    <jsonschema2pojo.version>1.2.1</jsonschema2pojo.version>
-    <picocli.version>4.7.5</picocli.version>
-    <properties.maven.plugin.version>1.0.0</properties.maven.plugin.version>
-    <kubernetes.webhooks.framework.version>1.1.3</kubernetes.webhooks.framework.version>
-
-
-    <!-- Maven plugin versions -->
-    <buildnumber.plugin.version>3.2.0</buildnumber.plugin.version>
-    <exec.maven-plugin.version>3.2.0</exec.maven-plugin.version>
-    <maven.compiler.plugin.version>3.13.0</maven.compiler.plugin.version>
-    <maven.bundle.plugin.version>5.1.9</maven.bundle.plugin.version>
-    <maven.buildhelper.plugin.version>3.5.0</maven.buildhelper.plugin.version>
-    <maven.jar.plugin.version>3.3.0</maven.jar.plugin.version>
-    <maven.surefire.plugin.version>3.2.5</maven.surefire.plugin.version>
-    <maven.scr.plugin.version>1.26.4</maven.scr.plugin.version>
-    <maven.resources.plugin.version>3.3.1</maven.resources.plugin.version>
-    <maven.release.plugin.version>3.0.1</maven.release.plugin.version>
-    <maven.javadoc.plugin.version>3.6.3</maven.javadoc.plugin.version>
-    <maven.source.plugin.version>3.3.0</maven.source.plugin.version>
-    <maven.enforcer.plugin.version>3.4.1</maven.enforcer.plugin.version>
-    <maven.deploy.plugin.version>3.1.1</maven.deploy.plugin.version>
-    <maven.gpg.plugin.version>3.1.0</maven.gpg.plugin.version>
-    <maven.antrun.plugin.version>3.1.0</maven.antrun.plugin.version>
-    <maven.dependency.plugin.version>3.6.1</maven.dependency.plugin.version>
-    <maven.shade.plugin.version>3.5.2</maven.shade.plugin.version>
-    <maven.install.plugin.version>3.1.1</maven.install.plugin.version>
-    <maven.invoker.plugin.version>3.6.0</maven.invoker.plugin.version>
-    <maven.plugin.plugin.version>3.11.0</maven.plugin.plugin.version>
-    <gmavenplus-plugin.version>3.0.2</gmavenplus-plugin.version>
-    <gradle-api-maven-plugin.version>0.0.5</gradle-api-maven-plugin.version>
-    <jandex.plugin.version>1.2.3</jandex.plugin.version>
-    <jandex.version>2.4.4.Final</jandex.version>
-    <jacoco-maven-plugin.version>0.8.11</jacoco-maven-plugin.version>
-    <jkube.version>1.16.1</jkube.version>
-    <sonar-maven-plugin.version>3.11.0.3922</sonar-maven-plugin.version>
-    <nexus-staging-maven-plugin>1.6.13</nexus-staging-maven-plugin>
-    <spotless-maven-plugin.version>2.43.0</spotless-maven-plugin.version>
-
-    <!-- Other options -->
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
-    <skipTests>false</skipTests>
-    <svc.version>1.1.1</svc.version>
-    <generate.targetDirectory>${project.basedir}/src/generated/java</generate.targetDirectory>
-
-    <exec.master>https://localhost:8443</exec.master>
-
-    <javadoc.doclint/>
-    <javadoc.include.deps>false</javadoc.include.deps>
-    <javadoc.source.includes />
-    <javadoc.package.excludes />
-
-    <osgi.import />
-    <osgi.export />
-    <osgi.private />
-    <osgi.dynamic.import />
-    <osgi.require-capability />
-    <osgi.provide-capability />
-    <osgi.bundles />
-    <osgi.activator />
-    <osgi.export.service />
-    <osgi.include.resources.default>
-      {maven-resources},
-      /META-INF/jandex.idx=target/classes/META-INF/jandex.idx
-    </osgi.include.resources.default>
-    <osgi.include.resources>${osgi.include.resources.default}</osgi.include.resources>
-    <karaf.itest.skip>false</karaf.itest.skip>
-    <project.build.outputTimestamp>2024-03-25T12:01:42Z</project.build.outputTimestamp>
-    <validation-api.version>2.0.1.Final</validation-api.version>
-
-    <jsonschema2pojo.targetPackage>io.fabric8.kubernetes.api.model</jsonschema2pojo.targetPackage>
-  </properties>
   <modules>
     <module>kubernetes-model-generator</module>
     <module>kubernetes-client-api</module>
@@ -230,10 +53,129 @@
     <module>kubernetes-client-deps-compatibility-tests</module>
     <module>log4j</module>
   </modules>
-
+  <scm>
+    <connection>scm:git:git@github.com:fabric8io/kubernetes-client.git</connection>
+    <developerConnection>scm:git:git@github.com:fabric8io/kubernetes-client.git</developerConnection>
+    <tag>${project.version}</tag>
+    <url>https://github.com/fabric8io/kubernetes-client/</url>
+  </scm>
+  <distributionManagement>
+    <repository>
+      <id>ossrh</id>
+      <name>Sonatype OSS Repository</name>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    </repository>
+    <snapshotRepository>
+      <id>ossrh</id>
+      <name>Sonatype OSS Repository (Snapshots)</name>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+  </distributionManagement>
+  <properties>
+    <maven.bundle.plugin.version>5.1.9</maven.bundle.plugin.version>
+    <maven.scr.plugin.version>1.26.4</maven.scr.plugin.version>
+    <maven.plugin.plugin.version>3.11.0</maven.plugin.plugin.version>
+    <osgi.import></osgi.import>
+    <javadoc.include.deps>false</javadoc.include.deps>
+    <maven.javadoc.plugin.version>3.6.3</maven.javadoc.plugin.version>
+    <jandex.plugin.version>1.2.3</jandex.plugin.version>
+    <jackson.version>2.17.0</jackson.version>
+    <sonar-maven-plugin.version>3.11.0.3922</sonar-maven-plugin.version>
+    <jkube.version>1.16.1</jkube.version>
+    <osgi.require-capability></osgi.require-capability>
+    <maven-core.version>3.9.6</maven-core.version>
+    <okhttp.version>3.12.12</okhttp.version>
+    <slf4j.version>2.0.12</slf4j.version>
+    <jandex.version>2.4.4.Final</jandex.version>
+    <maven.antrun.plugin.version>3.1.0</maven.antrun.plugin.version>
+    <log4j.version>2.23.1</log4j.version>
+    <osgi.include.resources>${osgi.include.resources.default}</osgi.include.resources>
+    <gmavenplus-plugin.version>3.0.2</gmavenplus-plugin.version>
+    <exec.maven-plugin.version>3.2.0</exec.maven-plugin.version>
+    <jackson.bundle.version>${jackson.version}</jackson.bundle.version>
+    <generex.version>1.0.2</generex.version>
+    <generex.bundle.version>1.0.1_1</generex.bundle.version>
+    <commons-compress.version>1.26.1</commons-compress.version>
+    <maven.buildhelper.plugin.version>3.5.0</maven.buildhelper.plugin.version>
+    <spotless-maven-plugin.version>2.43.0</spotless-maven-plugin.version>
+    <svc.version>1.1.1</svc.version>
+    <conscrypt-openjdk-uber.bundle.version>1.4.2_1</conscrypt-openjdk-uber.bundle.version>
+    <okio.version>1.17.6</okio.version>
+    <snakeyaml.bundle.version>2.2</snakeyaml.bundle.version>
+    <properties.maven.plugin.version>1.0.0</properties.maven.plugin.version>
+    <maven.invoker.plugin.version>3.6.0</maven.invoker.plugin.version>
+    <maven.enforcer.plugin.version>3.4.1</maven.enforcer.plugin.version>
+    <osgi.private></osgi.private>
+    <osgi.activator></osgi.activator>
+    <vertx.version>4.5.6</vertx.version>
+    <nexus-staging-maven-plugin>1.6.13</nexus-staging-maven-plugin>
+    <osgi.export></osgi.export>
+    <picocli.version>4.7.5</picocli.version>
+    <bc-fips.version>1.0.2.4</bc-fips.version>
+    <maven.compiler.plugin.version>3.13.0</maven.compiler.plugin.version>
+    <maven.release.plugin.version>3.0.1</maven.release.plugin.version>
+    <commons-io.version>2.15.1</commons-io.version>
+    <osgi.provide-capability></osgi.provide-capability>
+    <snakeyaml.version>2.7</snakeyaml.version>
+    <gradle-api-maven-plugin.version>0.0.5</gradle-api-maven-plugin.version>
+    <karaf.itest.skip>false</karaf.itest.skip>
+    <gradle-api.version>8.5</gradle-api.version>
+    <mockito.version>4.11.0</mockito.version>
+    <okhttp.bundle.version>3.12.1_1</okhttp.bundle.version>
+    <lombok.version>1.18.32</lombok.version>
+    <automaton.bundle.version>1.11-8_1</automaton.bundle.version>
+    <aries-spifly.bundle.version>1.3.0</aries-spifly.bundle.version>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <assertj.core.version>3.25.3</assertj.core.version>
+    <awaitility.version>4.2.1</awaitility.version>
+    <project.build.outputTimestamp>2024-03-25T12:01:42Z</project.build.outputTimestamp>
+    <maven.dependency.plugin.version>3.6.1</maven.dependency.plugin.version>
+    <scr.annotations.version>1.12.0</scr.annotations.version>
+    <maven.shade.plugin.version>3.5.2</maven.shade.plugin.version>
+    <maven.resources.plugin.version>3.3.1</maven.resources.plugin.version>
+    <javadoc.doclint></javadoc.doclint>
+    <validation-api.version>2.0.1.Final</validation-api.version>
+    <junit.version>5.10.2</junit.version>
+    <javadoc.package.excludes></javadoc.package.excludes>
+    <bcpkix-fips.version>1.0.7</bcpkix-fips.version>
+    <jsonschema2pojo.targetPackage>io.fabric8.kubernetes.api.model</jsonschema2pojo.targetPackage>
+    <maven.gpg.plugin.version>3.1.0</maven.gpg.plugin.version>
+    <maven.deploy.plugin.version>3.1.1</maven.deploy.plugin.version>
+    <zjsonpatch.version>0.3.0</zjsonpatch.version>
+    <bouncycastle.version>1.77</bouncycastle.version>
+    <maven.jar.plugin.version>3.3.0</maven.jar.plugin.version>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <groovy-api.version>4.0.20</groovy-api.version>
+    <javadoc.source.includes></javadoc.source.includes>
+    <spock.version>2.3-groovy-4.0</spock.version>
+    <kubernetes.webhooks.framework.version>1.1.3</kubernetes.webhooks.framework.version>
+    <generate.targetDirectory>${project.basedir}/src/generated/java</generate.targetDirectory>
+    <buildnumber.plugin.version>3.2.0</buildnumber.plugin.version>
+    <maven.surefire.plugin.version>3.2.5</maven.surefire.plugin.version>
+    <jsr305.version>3.0.2</jsr305.version>
+    <maven.source.plugin.version>3.3.0</maven.source.plugin.version>
+    <sundrio.version>0.103.1</sundrio.version>
+    <asm.bundle.version>8.0.1</asm.bundle.version>
+    <jetty.version>11.0.20</jetty.version>
+    <guava.version>33.1.0-jre</guava.version>
+    <maven.install.plugin.version>3.1.1</maven.install.plugin.version>
+    <okio.bundle.version>1.15.0_1</okio.bundle.version>
+    <osgi.bundles></osgi.bundles>
+    <approvaltests.version>23.0.0</approvaltests.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <skipTests>false</skipTests>
+    <jacoco-maven-plugin.version>0.8.11</jacoco-maven-plugin.version>
+    <jsonschema2pojo.version>1.2.1</jsonschema2pojo.version>
+    <osgi.include.resources.default>{maven-resources},
+      /META-INF/jandex.idx=target/classes/META-INF/jandex.idx</osgi.include.resources.default>
+    <osgi.export.service></osgi.export.service>
+    <useIncrementalCompilation>false</useIncrementalCompilation>
+    <osgi.dynamic.import></osgi.dynamic.import>
+    <maven-plugin-annotations.version>3.11.0</maven-plugin-annotations.version>
+    <exec.master>https://localhost:8443</exec.master>
+  </properties>
   <dependencyManagement>
     <dependencies>
-      <!-- Internal -->
       <dependency>
         <groupId>io.fabric8</groupId>
         <artifactId>generator-annotations</artifactId>
@@ -556,7 +498,6 @@
         <artifactId>tekton-client</artifactId>
         <version>${project.version}</version>
       </dependency>
-
       <dependency>
         <groupId>io.fabric8</groupId>
         <artifactId>istio-model-v1alpha3</artifactId>
@@ -572,7 +513,6 @@
         <artifactId>istio-client</artifactId>
         <version>${project.version}</version>
       </dependency>
-
       <dependency>
         <groupId>io.fabric8</groupId>
         <artifactId>volcano-model-v1beta1</artifactId>
@@ -633,7 +573,6 @@
         <artifactId>open-cluster-management-client</artifactId>
         <version>${project.version}</version>
       </dependency>
-
       <dependency>
         <groupId>io.fabric8</groupId>
         <artifactId>open-virtual-networking-model-v1</artifactId>
@@ -644,7 +583,6 @@
         <artifactId>open-virtual-networking-client</artifactId>
         <version>${project.version}</version>
       </dependency>
-
       <dependency>
         <groupId>io.fabric8</groupId>
         <artifactId>certmanager-model-v1alpha2</artifactId>
@@ -670,7 +608,6 @@
         <artifactId>certmanager-client</artifactId>
         <version>${project.version}</version>
       </dependency>
-
       <dependency>
         <groupId>io.fabric8</groupId>
         <artifactId>chaosmesh-model</artifactId>
@@ -681,7 +618,6 @@
         <artifactId>chaosmesh-client</artifactId>
         <version>${project.version}</version>
       </dependency>
-
       <dependency>
         <groupId>io.fabric8</groupId>
         <artifactId>servicecatalog-model</artifactId>
@@ -692,7 +628,6 @@
         <artifactId>servicecatalog-client</artifactId>
         <version>${project.version}</version>
       </dependency>
-
       <dependency>
         <groupId>io.fabric8</groupId>
         <artifactId>verticalpodautoscaler-model-v1</artifactId>
@@ -703,7 +638,6 @@
         <artifactId>verticalpodautoscaler-client</artifactId>
         <version>${project.version}</version>
       </dependency>
-
       <dependency>
         <groupId>io.fabric8</groupId>
         <artifactId>volumesnapshot-model</artifactId>
@@ -724,24 +658,18 @@
         <artifactId>kube-api-test-client-inject</artifactId>
         <version>${project.version}</version>
       </dependency>
-
-
-      <!-- Jackson dependencies, imported as a BOM -->
       <dependency>
         <groupId>com.fasterxml.jackson</groupId>
         <artifactId>jackson-bom</artifactId>
         <version>${jackson.version}</version>
-        <scope>import</scope>
         <type>pom</type>
+        <scope>import</scope>
       </dependency>
-
       <dependency>
         <groupId>org.snakeyaml</groupId>
         <artifactId>snakeyaml-engine</artifactId>
         <version>${snakeyaml.version}</version>
       </dependency>
-
-      <!-- Dependencies -->
       <dependency>
         <groupId>io.sundr</groupId>
         <artifactId>builder-annotations</artifactId>
@@ -886,8 +814,6 @@
         <artifactId>picocli</artifactId>
         <version>${picocli.version}</version>
       </dependency>
-
-      <!-- Testing and Mocking -->
       <dependency>
         <groupId>io.fabric8</groupId>
         <artifactId>zjsonpatch</artifactId>
@@ -899,14 +825,12 @@
         <version>${mockito.version}</version>
         <scope>test</scope>
       </dependency>
-
       <dependency>
         <groupId>org.mockito</groupId>
         <artifactId>mockito-inline</artifactId>
         <version>${mockito.version}</version>
         <scope>test</scope>
       </dependency>
-
       <dependency>
         <groupId>org.junit.jupiter</groupId>
         <artifactId>junit-jupiter-api</artifactId>
@@ -925,42 +849,36 @@
         <version>${junit.version}</version>
         <scope>test</scope>
       </dependency>
-
       <dependency>
         <groupId>org.assertj</groupId>
         <artifactId>assertj-core</artifactId>
         <version>${assertj.core.version}</version>
         <scope>test</scope>
       </dependency>
-
       <dependency>
         <groupId>org.awaitility</groupId>
         <artifactId>awaitility</artifactId>
         <version>${awaitility.version}</version>
         <scope>test</scope>
       </dependency>
-
       <dependency>
         <groupId>org.spockframework</groupId>
         <artifactId>spock-core</artifactId>
         <version>${spock.version}</version>
         <scope>test</scope>
       </dependency>
-
       <dependency>
         <groupId>javax.validation</groupId>
         <artifactId>validation-api</artifactId>
         <version>${validation-api.version}</version>
         <scope>test</scope>
       </dependency>
-
       <dependency>
         <groupId>com.approvaltests</groupId>
         <artifactId>approvaltests</artifactId>
         <version>${approvaltests.version}</version>
         <scope>test</scope>
       </dependency>
-
       <dependency>
         <groupId>io.javaoperatorsdk</groupId>
         <artifactId>kubernetes-webhooks-framework-core</artifactId>
@@ -969,12 +887,23 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
-
+  <repositories>
+    <repository>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <id>sonatype-maven-org</id>
+      <name>Sonatype Maven Repository (maven.org)</name>
+      <url>https://repo1.maven.org/maven2/</url>
+    </repository>
+  </repositories>
   <build>
     <resources>
       <resource>
         <directory>target/classes</directory>
-        <!-- allow the BND plugin to include an optionally generated resource -->
         <includes>
           <include>META-INF/services/io.fabric8.kubernetes.api.model.KubernetesResource</include>
         </includes>
@@ -996,16 +925,14 @@
           <configuration>
             <showDeprecation>true</showDeprecation>
             <showWarnings>true</showWarnings>
-             <compilerArgument>-Xlint:unchecked</compilerArgument>
+            <compilerArgument>-Xlint:unchecked</compilerArgument>
           </configuration>
         </plugin>
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jar-plugin</artifactId>
           <version>${maven.jar.plugin.version}</version>
         </plugin>
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-javadoc-plugin</artifactId>
           <version>${maven.javadoc.plugin.version}</version>
           <executions>
@@ -1018,7 +945,6 @@
           </executions>
         </plugin>
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-source-plugin</artifactId>
           <version>${maven.source.plugin.version}</version>
           <executions>
@@ -1051,12 +977,10 @@
           <version>${maven.gpg.plugin.version}</version>
         </plugin>
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-deploy-plugin</artifactId>
           <version>${maven.deploy.plugin.version}</version>
         </plugin>
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-resources-plugin</artifactId>
           <version>${maven.resources.plugin.version}</version>
         </plugin>
@@ -1067,30 +991,12 @@
         <plugin>
           <artifactId>maven-enforcer-plugin</artifactId>
           <version>${maven.enforcer.plugin.version}</version>
-          <!-- <executions>
-            <execution>
-              <id>enforce-maven</id>
-              <goals>
-                <goal>enforce</goal>
-              </goals>
-              <configuration>
-                <failFast>true</failFast>
-                <rules>
-                  <requireMavenVersion>
-                    <version>[3.2.5,)</version>
-                  </requireMavenVersion>
-                </rules>
-              </configuration>
-            </execution>
-          </executions> -->
         </plugin>
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-plugin-plugin</artifactId>
           <version>${maven.plugin.plugin.version}</version>
         </plugin>
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-invoker-plugin</artifactId>
           <version>${maven.invoker.plugin.version}</version>
         </plugin>
@@ -1129,19 +1035,6 @@
           <groupId>org.jsonschema2pojo</groupId>
           <artifactId>jsonschema2pojo-maven-plugin</artifactId>
           <version>${jsonschema2pojo.version}</version>
-          <configuration>
-            <customAnnotator>io.fabric8.kubernetes.jsonschema2pojo.KubernetesTypeAnnotator</customAnnotator>
-            <customRuleFactory>io.fabric8.kubernetes.jsonschema2pojo.Fabric8RuleFactory</customRuleFactory>
-            <sourceDirectory>${project.basedir}/src/main/resources/schema</sourceDirectory>
-            <targetPackage>${jsonschema2pojo.targetPackage}</targetPackage>
-            <includeConstructors>true</includeConstructors>
-            <includeJsr303Annotations>false</includeJsr303Annotations>
-            <includeToString>false</includeToString>
-            <includeHashcodeAndEquals>false</includeHashcodeAndEquals>
-            <removeOldOutput>true</removeOldOutput>
-            <outputDirectory>${generate.targetDirectory}</outputDirectory>
-            <annotationStyle>none</annotationStyle>
-          </configuration>
           <executions>
             <execution>
               <goals>
@@ -1156,6 +1049,19 @@
               <version>${project.version}</version>
             </dependency>
           </dependencies>
+          <configuration>
+            <customAnnotator>io.fabric8.kubernetes.jsonschema2pojo.KubernetesTypeAnnotator</customAnnotator>
+            <customRuleFactory>io.fabric8.kubernetes.jsonschema2pojo.Fabric8RuleFactory</customRuleFactory>
+            <sourceDirectory>${project.basedir}/src/main/resources/schema</sourceDirectory>
+            <targetPackage>${jsonschema2pojo.targetPackage}</targetPackage>
+            <includeConstructors>true</includeConstructors>
+            <includeJsr303Annotations>false</includeJsr303Annotations>
+            <includeToString>false</includeToString>
+            <includeHashcodeAndEquals>false</includeHashcodeAndEquals>
+            <removeOldOutput>true</removeOldOutput>
+            <outputDirectory>${generate.targetDirectory}</outputDirectory>
+            <annotationStyle>none</annotationStyle>
+          </configuration>
         </plugin>
         <plugin>
           <groupId>com.marcnuri.plugins</groupId>
@@ -1167,10 +1073,8 @@
     </pluginManagement>
     <plugins>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-enforcer-plugin</artifactId>
       </plugin>
-      <!-- Create jandex index for faster performance in environments that use it -->
       <plugin>
         <groupId>org.jboss.jandex</groupId>
         <artifactId>jandex-maven-plugin</artifactId>
@@ -1194,7 +1098,6 @@
         </executions>
       </plugin>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
         <inherited>true</inherited>
         <configuration>
@@ -1202,70 +1105,6 @@
             <ENV_VAR_EXISTS>value</ENV_VAR_EXISTS>
             <ENV_VAR_EXISTS_BOOLEAN>true</ENV_VAR_EXISTS_BOOLEAN>
           </environmentVariables>
-        </configuration>
-      </plugin>
-
-      <plugin>
-        <groupId>com.diffplug.spotless</groupId>
-        <artifactId>spotless-maven-plugin</artifactId>
-        <version>${spotless-maven-plugin.version}</version>
-        <configuration>
-          <java>
-            <eclipse>
-              <file>ide-config/eclipse-format.xml</file>
-            </eclipse>
-            <importOrder>
-              <file>ide-config/eclipse.importorder</file>
-            </importOrder>
-            <removeUnusedImports/>
-          </java>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>com.mycila</groupId>
-        <artifactId>license-maven-plugin</artifactId>
-        <version>4.3</version>
-        <configuration>
-          <aggregate>true</aggregate>
-          <properties>
-            <owner>Red Hat, Inc.</owner>
-          </properties>
-          <licenseSets>
-            <licenseSet>
-              <header>header.txt</header>
-              <excludes>
-                <exclude>**/.idea</exclude>
-                <exclude>.idea</exclude>
-                <exclude>.editorconfig</exclude>
-                <exclude>license.txt</exclude>
-                <exclude>**/test-kubeconfig</exclude>
-                <exclude>**/src/generated/java/**/*</exclude>
-                <exclude>**/io/fabric8/kubernetes/client/lib/**/*.java</exclude>
-                <exclude>kubernetes-model/vendor/**/*</exclude>
-                <exclude>kubernetes-model/generate</exclude>
-                <exclude>kubernetes-model/.openshift-version</exclude>
-                <exclude>kubernetes-model/glide.*</exclude>
-                <exclude>kubernetes-model/Gopkg.*</exclude>
-                <exclude>extensions/**/vendor/**/*</exclude>
-                <exclude>**/go.mod</exclude>
-                <exclude>**/go.sum</exclude>
-                <exclude>kubernetes-client/src/test/resources/**/*</exclude>
-                <exclude>kubernetes-client/src/test/resources/mockito-extensions/*</exclude>
-                <exclude>**/src/test/resources/ssl/*</exclude>
-                <exclude>**/src/test/resources/io/fabric8/java/generator/approvals/*.*.approved.txt</exclude>
-                <exclude>**/it/**/expected/**/*.expected</exclude>
-                <exclude>Jenkinsfile</exclude>
-                <exclude>.mvn/**/*</exclude>
-                <exclude>mvnw</exclude>
-                <exclude>mvnw.cmd</exclude>
-              </excludes>
-            </licenseSet>
-          </licenseSets>
-          <mapping>
-            <go>JAVADOC_STYLE</go>
-            <svg>XML_STYLE</svg>
-            <Makefile>SCRIPT_STYLE</Makefile>
-          </mapping>
         </configuration>
       </plugin>
       <plugin>
@@ -1297,7 +1136,6 @@
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>build-helper-maven-plugin</artifactId>
         <version>${maven.buildhelper.plugin.version}</version>
-        <inherited>true</inherited>
         <executions>
           <execution>
             <id>parse-version</id>
@@ -1306,20 +1144,16 @@
             </goals>
           </execution>
         </executions>
+        <inherited>true</inherited>
       </plugin>
     </plugins>
   </build>
-
   <profiles>
     <profile>
       <id>release</id>
-      <properties>
-        <karaf.itest.skip>true</karaf.itest.skip>
-      </properties>
       <build>
         <plugins>
           <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-gpg-plugin</artifactId>
             <version>${maven.gpg.plugin.version}</version>
             <executions>
@@ -1340,18 +1174,6 @@
             </configuration>
           </plugin>
           <plugin>
-            <groupId>org.sonatype.plugins</groupId>
-            <artifactId>nexus-staging-maven-plugin</artifactId>
-            <version>${nexus-staging-maven-plugin}</version>
-            <extensions>true</extensions>
-            <configuration>
-              <serverId>ossrh</serverId>
-              <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-              <autoReleaseAfterClose>false</autoReleaseAfterClose>
-            </configuration>
-          </plugin>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-release-plugin</artifactId>
             <version>${maven.release.plugin.version}</version>
             <configuration>
@@ -1361,7 +1183,6 @@
             </configuration>
           </plugin>
           <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-enforcer-plugin</artifactId>
             <version>${maven.enforcer.plugin.version}</version>
             <executions>
@@ -1382,15 +1203,7 @@
             </executions>
           </plugin>
           <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-javadoc-plugin</artifactId>
-            <configuration>
-              <includeDependencySources>${javadoc.include.deps}</includeDependencySources>
-              <dependencySourceIncludes>
-                <dependencySourceInclude>${javadoc.source.includes}</dependencySourceInclude>
-              </dependencySourceIncludes>
-              <excludePackageNames>${javadoc.package.excludes}</excludePackageNames>
-            </configuration>
             <executions>
               <execution>
                 <id>attach-javadocs</id>
@@ -1402,24 +1215,28 @@
                 </configuration>
               </execution>
             </executions>
+            <configuration>
+              <includeDependencySources>${javadoc.include.deps}</includeDependencySources>
+              <dependencySourceIncludes>
+                <dependencySourceInclude>${javadoc.source.includes}</dependencySourceInclude>
+              </dependencySourceIncludes>
+              <excludePackageNames>${javadoc.package.excludes}</excludePackageNames>
+            </configuration>
           </plugin>
           <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-source-plugin</artifactId>
           </plugin>
         </plugins>
       </build>
+      <properties>
+        <karaf.itest.skip>true</karaf.itest.skip>
+      </properties>
     </profile>
     <profile>
       <id>itests</id>
-      <modules>
-        <module>kubernetes-itests</module>
-        <module>chaos-tests</module>
-      </modules>
       <build>
         <plugins>
           <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-surefire-plugin</artifactId>
             <version>${maven.surefire.plugin.version}</version>
             <configuration>
@@ -1427,7 +1244,6 @@
             </configuration>
           </plugin>
           <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-failsafe-plugin</artifactId>
             <version>${maven.surefire.plugin.version}</version>
             <executions>
@@ -1441,6 +1257,10 @@
           </plugin>
         </plugins>
       </build>
+      <modules>
+        <module>kubernetes-itests</module>
+        <module>chaos-tests</module>
+      </modules>
     </profile>
     <profile>
       <id>doclint-java8-disable</id>
@@ -1453,22 +1273,6 @@
     </profile>
     <profile>
       <id>sonar</id>
-      <properties>
-        <sonar.projectKey>fabric8io_kubernetes-client</sonar.projectKey>
-        <sonar.moduleKey>${project.artifactId}</sonar.moduleKey>
-        <sonar.organization>fabric8io</sonar.organization>
-        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-        <sonar.login/>
-        <sonar.password/>
-        <sonar.projectName>Fabric8 :: Kubernetes Client</sonar.projectName>
-        <sonar.links.homepage>https://github.com/fabric8io/kubernetes-client</sonar.links.homepage>
-        <sonar.links.ci>https://github.com/fabric8io/kubernetes-client/actions</sonar.links.ci>
-        <sonar.links.scm>https://github.com/fabric8io/kubernetes-client</sonar.links.scm>
-        <sonar.links.issue>https://github.com/fabric8io/kubernetes-client/issues</sonar.links.issue>
-        <sonar.exclusions>**/src/generated/java/**/*</sonar.exclusions>
-        <sonar.coverage.exclusions>**/kubernetes-examples/**/*,**/extensions/**/examples/**/*</sonar.coverage.exclusions>
-        <karaf.itest.skip>true</karaf.itest.skip>
-      </properties>
       <build>
         <plugins>
           <plugin>
@@ -1477,15 +1281,28 @@
           </plugin>
         </plugins>
       </build>
+      <properties>
+        <sonar.projectName>Fabric8 :: Kubernetes Client</sonar.projectName>
+        <karaf.itest.skip>true</karaf.itest.skip>
+        <sonar.login></sonar.login>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+        <sonar.organization>fabric8io</sonar.organization>
+        <sonar.links.ci>https://github.com/fabric8io/kubernetes-client/actions</sonar.links.ci>
+        <sonar.exclusions>**/src/generated/java/**/*</sonar.exclusions>
+        <sonar.projectKey>fabric8io_kubernetes-client</sonar.projectKey>
+        <sonar.links.issue>https://github.com/fabric8io/kubernetes-client/issues</sonar.links.issue>
+        <sonar.moduleKey>${project.artifactId}</sonar.moduleKey>
+        <sonar.links.scm>https://github.com/fabric8io/kubernetes-client</sonar.links.scm>
+        <sonar.links.homepage>https://github.com/fabric8io/kubernetes-client</sonar.links.homepage>
+        <sonar.password></sonar.password>
+        <sonar.coverage.exclusions>**/kubernetes-examples/**/*,**/extensions/**/examples/**/*</sonar.coverage.exclusions>
+      </properties>
     </profile>
     <profile>
       <id>java9-plus</id>
       <activation>
         <jdk>[9,)</jdk>
       </activation>
-      <properties>
-        <maven.compiler.release>8</maven.compiler.release>
-      </properties>
       <build>
         <pluginManagement>
           <plugins>
@@ -1503,24 +1320,28 @@
           </plugins>
         </pluginManagement>
       </build>
+      <properties>
+        <maven.compiler.release>8</maven.compiler.release>
+      </properties>
     </profile>
     <profile>
       <id>java-11</id>
       <activation>
         <jdk>[11,)</jdk>
       </activation>
-      <modules>
-        <module>httpclient-jdk</module>
-        <module>httpclient-jetty</module>
-        <module>httpclient-tests</module>
-        <module>junit/kube-api-test</module>
-      </modules>
       <build>
         <plugins>
           <plugin>
             <groupId>io.sundr</groupId>
             <artifactId>sundr-maven-plugin</artifactId>
             <version>${sundrio.version}</version>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>generate-bom</goal>
+                </goals>
+              </execution>
+            </executions>
             <configuration>
               <boms>
                 <bom>
@@ -1570,31 +1391,22 @@
                 </bom>
               </boms>
             </configuration>
-            <executions>
-              <execution>
-                <goals>
-                  <goal>generate-bom</goal>
-                </goals>
-              </execution>
-            </executions>
           </plugin>
         </plugins>
       </build>
+      <modules>
+        <module>httpclient-jdk</module>
+        <module>httpclient-jetty</module>
+        <module>httpclient-tests</module>
+        <module>junit/kube-api-test</module>
+      </modules>
     </profile>
     <profile>
       <id>javadoc-test</id>
       <build>
         <plugins>
           <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-javadoc-plugin</artifactId>
-            <configuration>
-              <includeDependencySources>${javadoc.include.deps}</includeDependencySources>
-              <dependencySourceIncludes>
-                <dependencySourceInclude>${javadoc.source.includes}</dependencySourceInclude>
-              </dependencySourceIncludes>
-              <excludePackageNames>${javadoc.package.excludes}</excludePackageNames>
-            </configuration>
             <executions>
               <execution>
                 <id>attach-javadocs</id>
@@ -1606,6 +1418,13 @@
                 </configuration>
               </execution>
             </executions>
+            <configuration>
+              <includeDependencySources>${javadoc.include.deps}</includeDependencySources>
+              <dependencySourceIncludes>
+                <dependencySourceInclude>${javadoc.source.includes}</dependencySourceInclude>
+              </dependencySourceIncludes>
+              <excludePackageNames>${javadoc.package.excludes}</excludePackageNames>
+            </configuration>
           </plugin>
         </plugins>
       </build>

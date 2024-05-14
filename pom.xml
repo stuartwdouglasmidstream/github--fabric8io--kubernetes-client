@@ -153,7 +153,7 @@
     <buildnumber.plugin.version>3.2.0</buildnumber.plugin.version>
     <maven.surefire.plugin.version>3.2.5</maven.surefire.plugin.version>
     <jsr305.version>3.0.2</jsr305.version>
-    <maven.source.plugin.version>3.3.0</maven.source.plugin.version>
+    <maven.source.plugin.version>3.3.1</maven.source.plugin.version>
     <sundrio.version>0.103.1</sundrio.version>
     <asm.bundle.version>8.0.1</asm.bundle.version>
     <jetty.version>11.0.20</jetty.version>

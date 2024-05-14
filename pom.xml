@@ -74,7 +74,7 @@
   <properties>
     <maven.bundle.plugin.version>5.1.9</maven.bundle.plugin.version>
     <maven.scr.plugin.version>1.26.4</maven.scr.plugin.version>
-    <maven.plugin.plugin.version>3.11.0</maven.plugin.plugin.version>
+    <maven.plugin.plugin.version>3.13.0</maven.plugin.plugin.version>
     <osgi.import></osgi.import>
     <javadoc.include.deps>false</javadoc.include.deps>
     <maven.javadoc.plugin.version>3.6.3</maven.javadoc.plugin.version>

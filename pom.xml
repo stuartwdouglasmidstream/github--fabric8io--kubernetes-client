@@ -164,7 +164,7 @@
     <approvaltests.version>23.0.0</approvaltests.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <skipTests>false</skipTests>
-    <jacoco-maven-plugin.version>0.8.11</jacoco-maven-plugin.version>
+    <jacoco-maven-plugin.version>0.8.12</jacoco-maven-plugin.version>
     <jsonschema2pojo.version>1.2.1</jsonschema2pojo.version>
     <osgi.include.resources.default>{maven-resources},
       /META-INF/jandex.idx=target/classes/META-INF/jandex.idx</osgi.include.resources.default>

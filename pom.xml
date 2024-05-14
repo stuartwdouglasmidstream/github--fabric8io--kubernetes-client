@@ -120,7 +120,7 @@
     <gradle-api-maven-plugin.version>0.0.5</gradle-api-maven-plugin.version>
     <karaf.itest.skip>false</karaf.itest.skip>
     <gradle-api.version>8.5</gradle-api.version>
-    <mockito.version>4.11.0</mockito.version>
+    <mockito.version>5.2.0</mockito.version>
     <okhttp.bundle.version>3.12.1_1</okhttp.bundle.version>
     <lombok.version>1.18.32</lombok.version>
     <automaton.bundle.version>1.11-8_1</automaton.bundle.version>

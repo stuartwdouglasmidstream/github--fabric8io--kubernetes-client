@@ -140,7 +140,7 @@
     <bcpkix-fips.version>1.0.7</bcpkix-fips.version>
     <jsonschema2pojo.targetPackage>io.fabric8.kubernetes.api.model</jsonschema2pojo.targetPackage>
     <maven.gpg.plugin.version>3.1.0</maven.gpg.plugin.version>
-    <maven.deploy.plugin.version>3.1.1</maven.deploy.plugin.version>
+    <maven.deploy.plugin.version>3.1.2</maven.deploy.plugin.version>
     <zjsonpatch.version>0.3.0</zjsonpatch.version>
     <bouncycastle.version>1.77</bouncycastle.version>
     <maven.jar.plugin.version>3.3.0</maven.jar.plugin.version>

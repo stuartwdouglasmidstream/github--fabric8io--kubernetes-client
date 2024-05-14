@@ -161,7 +161,7 @@
     <maven.install.plugin.version>3.1.1</maven.install.plugin.version>
     <okio.bundle.version>1.15.0_1</okio.bundle.version>
     <osgi.bundles></osgi.bundles>
-    <approvaltests.version>23.0.0</approvaltests.version>
+    <approvaltests.version>24.1.0</approvaltests.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <skipTests>false</skipTests>
     <jacoco-maven-plugin.version>0.8.11</jacoco-maven-plugin.version>

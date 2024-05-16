@@ -156,7 +156,7 @@
     <maven.source.plugin.version>3.3.0</maven.source.plugin.version>
     <sundrio.version>0.103.1</sundrio.version>
     <asm.bundle.version>8.0.1</asm.bundle.version>
-    <jetty.version>11.0.20</jetty.version>
+    <jetty.version>11.0.21</jetty.version>
     <guava.version>33.1.0-jre</guava.version>
     <maven.install.plugin.version>3.1.1</maven.install.plugin.version>
     <okio.bundle.version>1.15.0_1</okio.bundle.version>

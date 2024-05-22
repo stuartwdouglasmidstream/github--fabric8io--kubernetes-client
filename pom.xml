@@ -91,7 +91,7 @@
     <log4j.version>2.23.1</log4j.version>
     <osgi.include.resources>${osgi.include.resources.default}</osgi.include.resources>
     <gmavenplus-plugin.version>3.0.2</gmavenplus-plugin.version>
-    <exec.maven-plugin.version>3.2.0</exec.maven-plugin.version>
+    <exec.maven-plugin.version>3.3.0</exec.maven-plugin.version>
     <jackson.bundle.version>${jackson.version}</jackson.bundle.version>
     <generex.version>1.0.2</generex.version>
     <generex.bundle.version>1.0.1_1</generex.bundle.version>

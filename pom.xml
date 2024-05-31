@@ -117,7 +117,7 @@
     <commons-io.version>2.15.1</commons-io.version>
     <osgi.provide-capability></osgi.provide-capability>
     <snakeyaml.version>2.7</snakeyaml.version>
-    <gradle-api-maven-plugin.version>0.0.5</gradle-api-maven-plugin.version>
+    <gradle-api-maven-plugin.version>0.0.6</gradle-api-maven-plugin.version>
     <karaf.itest.skip>false</karaf.itest.skip>
     <gradle-api.version>8.5</gradle-api.version>
     <mockito.version>4.11.0</mockito.version>

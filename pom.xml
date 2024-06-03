@@ -171,7 +171,7 @@
     <osgi.export.service></osgi.export.service>
     <useIncrementalCompilation>false</useIncrementalCompilation>
     <osgi.dynamic.import></osgi.dynamic.import>
-    <maven-plugin-annotations.version>3.11.0</maven-plugin-annotations.version>
+    <maven-plugin-annotations.version>3.13.1</maven-plugin-annotations.version>
     <exec.master>https://localhost:8443</exec.master>
   </properties>
   <dependencyManagement>

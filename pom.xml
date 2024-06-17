@@ -83,7 +83,7 @@
     <sonar-maven-plugin.version>3.11.0.3922</sonar-maven-plugin.version>
     <jkube.version>1.16.1</jkube.version>
     <osgi.require-capability></osgi.require-capability>
-    <maven-core.version>3.9.6</maven-core.version>
+    <maven-core.version>3.9.8</maven-core.version>
     <okhttp.version>3.12.12</okhttp.version>
     <slf4j.version>2.0.12</slf4j.version>
     <jandex.version>2.4.4.Final</jandex.version>
